@@ -1,4 +1,4 @@
-#!/bin/bash
+!/bin/bash
 #Auto Change Server Files
 #by Gaozq
 
@@ -23,10 +23,14 @@ i=0
 while ((i< $count))
 do
 	i=`expr $1 + 1`	#让i加1
+	
 	sed "${i}s/^/&${i} /g" ip.txt>>ip.txt.swp
+
 	IP=`awk -v I="$1" '{if(I==$1)print$2}' ip.txt.swp`	#类似用while实现循环更换ip
+
 	scp -r $1 root@${IP}:$2
-	#rsync -aP --delete $1 root@${IP}:$2
+
+	#rsync -aP --delete $1 root@${IP}:$2		#同上scp命令
 done
 
 
