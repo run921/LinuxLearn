@@ -35,7 +35,7 @@ cat >email.txt <<EOF
 CRITICAL - DISK Monitor:$D_Name Used mor then ${D_Percent}%
 EOF
 	echo -e "\033[32mThe $D_Name has been used for more rhen ${D_Percent}%, Please Check.\033[0m"
-	mail -s "$D_Name Warning" 954272009@qq.com <email.txt
+	mail -s "$D_Name Warning" 954272009@qq.com < email.txt
 	fi
 done<list.txt
 echo -e "\033[32m--------------------- done  --------------------\033[0m"
