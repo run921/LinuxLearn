@@ -27,3 +27,7 @@ echo CPU_INFO:$cpu_info1
 #echo DISK_INFO:$disk_info
 echo MEM_INFO:$mem_info
 echo LOAD_INFO:$load_info
+
+#将得到的系统消息写入到csv文件
+echo "IP地址,主机名,CPU配置,内存大小,负载情况">>1.csv
+echo "$ip_info,$serv_info,$cpu_info1,$mem_info,$load_info">>1.csv
